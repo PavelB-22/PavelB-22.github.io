@@ -1,0 +1,27 @@
+# Публикует в канал ознакомительный пост с картинкой и кнопкой «Все программы».
+# Запуск вручную: GitHub → Actions → «Post intro» → Run workflow.
+name: Post intro
+
+on:
+  workflow_dispatch:
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Send to Telegram
+        env:
+          TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ -z "$TOKEN" ] || [ -z "$CHAT" ]; then echo "::error::Нет секретов TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID"; exit 1; fi
+          KB='{"inline_keyboard":[[{"text":"📦 Все программы","url":"https://pavelb-22.github.io/"}]]}'
+          RESP=$(curl -sS "https://api.telegram.org/bot${TOKEN}/sendPhoto" \
+            -F chat_id="$CHAT" \
+            -F photo=@post/intro.jpg \
+            -F caption="$(cat post/intro.html)" \
+            -F parse_mode=HTML \
+            -F reply_markup="$KB")
+          echo "$RESP" | grep -q '"ok":true' && echo "✅ Пост опубликован" || { echo "::error::Telegram ответил: $RESP"; exit 1; }

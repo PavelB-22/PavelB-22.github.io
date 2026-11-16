@@ -1,0 +1,39 @@
+[
+  {
+    "id": "shepot",
+    "name": "Shepot",
+    "tagline": "Голос в текст",
+    "about": "Зажал клавиши, сказал — текст появился там, где курсор: Telegram, браузер, Word. Распознаёт речь прямо на компьютере, голос никуда не уходит.",
+    "replaces": "SuperWhisper, MacWhisper",
+    "icon": "icons/shepot.png",
+    "repo": "https://github.com/PavelB-22/shepot",
+    "platforms": {
+      "mac": {
+        "label": "Mac (M1 и новее)",
+        "how": "Открой «Терминал» (⌘ + пробел → Терминал), вставь строку и нажми Enter:",
+        "cmd": "curl -fsSL https://raw.githubusercontent.com/PavelB-22/shepot/main/install.sh | bash"
+      },
+      "windows": {
+        "label": "Windows 10/11",
+        "how": "Нажми Win, набери PowerShell, открой, вставь строку и нажми Enter:",
+        "cmd": "irm https://raw.githubusercontent.com/PavelB-22/shepot/main/install.ps1 | iex"
+      }
+    }
+  },
+  {
+    "id": "langswitch",
+    "name": "LangSwitch",
+    "tagline": "Раскладка без ошибок",
+    "about": "Двойной Shift — сменить язык. Набрал «ghbdtn» — само станет «привет». Исправляет выделенный текст и случайный Caps Lock.",
+    "replaces": "Caramba Switcher, Punto Switcher",
+    "icon": "icons/langswitch.png",
+    "repo": "https://github.com/PavelB-22/langswitch",
+    "platforms": {
+      "mac": {
+        "label": "Mac (macOS 13+)",
+        "how": "Открой «Терминал» (⌘ + пробел → Терминал), вставь строку и нажми Enter. Потом включи LangSwitch в «Настройки → Конфиденциальность → Универсальный доступ»:",
+        "cmd": "curl -fsSL https://raw.githubusercontent.com/PavelB-22/langswitch/main/install.sh | bash"
+      }
+    }
+  }
+]
