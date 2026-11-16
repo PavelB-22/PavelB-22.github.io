@@ -33,6 +33,11 @@
         "label": "Mac (macOS 13+)",
         "how": "Открой «Терминал» (⌘ + пробел → Терминал), вставь строку и нажми Enter. Потом включи LangSwitch в «Настройки → Конфиденциальность → Универсальный доступ»:",
         "cmd": "curl -fsSL https://raw.githubusercontent.com/PavelB-22/langswitch/main/install.sh | bash"
+      },
+      "windows": {
+        "label": "Windows 10/11",
+        "how": "Нажми Win, набери PowerShell, открой, вставь строку и нажми Enter. Значок RU/EN появится у часов:",
+        "cmd": "irm https://raw.githubusercontent.com/PavelB-22/langswitch/main/install.ps1 | iex"
       }
     }
   }
